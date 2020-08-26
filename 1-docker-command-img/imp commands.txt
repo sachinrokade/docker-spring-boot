@@ -1,0 +1,35 @@
+docker login
+docker rmi $(docker images -q) -f   //remove all img
+
+*************push docker imgae
+docker tag ${image_id} docker.io/${login_name}/${image_name} 
+docker push docker.io/${login_name}/${image_name}
+docker pull <repo>/<imgae>
+
+
+
+*************docker run
+docker run -p hostport:contport  img_id/nm        						  //docker run -p 8091:8091 a80c
+docker run -p hostport:contport -d img_id/nm    						  //docker run -p 8091:8091 -d a80c  -d=detach mode
+docker run -p hostport:contport -m 256m --cpu-quota 5000 img_id/nm        //docker run -p hostport:contport -m $ram --cpu-quota $in% img_id/nm   5%=5000
+
+************* logs
+docker logs
+docker logs -f 									 //-f live log
+docker logs <contn_id>
+
+************* container
+docker ps  //list of container
+docker ls -a
+docker stop
+docker kill
+docker container prune  //remove all conti
+docker stats            //below op
+	CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT    MEM %               NET I/O             BLOCK I/O           PIDS
+	3af4d07b6c83        fervent_newton      0.02%               45.5MiB / 985.4MiB   4.62%               696B / 0B           0B / 0B             11
+docker system df
+	TYPE                TOTAL               ACTIVE              SIZE                RECLAIMABLE
+	Images              1                   1                   144.1MB             0B (0%)
+	Containers          1                   0                   0B                  0B
+	Local Volumes       0                   0                   0B                  0B
+	Build Cache         0                   0                   0B                  0B

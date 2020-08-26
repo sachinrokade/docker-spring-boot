@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+
+<style>
+.button, input, select, textarea {
+	margin-bottom: 25;
+}
+
+.dataTables_filter {
+	float: right;
+}
+
+.dataTables_paginate {
+	float: right;
+}
+
+th {
+	background-color: #31708f;
+	color: white;
+	padding: 1px 5px;
+	font-weight: bold;
+	margin-right: 100px
+}
+
+.select[multiple], select[size] {
+	margin-top: 10px;
+}
+
+#geomap {
+	margin-left: px;
+	width: 99%;
+	height: 400px;
+}
+
+.form-group input-group {
+	width: 50%;
+}
+
+#popupWindow {
+	width: 500px;
+	height: auto;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -50px;
+	padding: 20px;
+	position: fixed;
+	background: url("../img/binding_dark.png");
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px #000;
+	opacity: 0.9;
+	z-index: 1000;
+	display: none;
+}
+</style>
+</head>
+
+<body>
+<div id="throbber" style="display: none; min-height: 120px;"></div>
+	<div id="noty-holder"></div>
+	<div id="wrapper">
+		<!-- Navigation -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header"> </div>
+				<h3 style="margin-bottom: -17px;color: white;">Updated Student</h3>
+				<!-- <hr style="border: 1px solid skyblue;" /> -->
+				
+		</nav>
+	</div>
+			
+
+
+    <div class="container my-5" id="page-wrapper">
+       <div class="container-fluid">
+		       <div style="margin-top: 30px">
+				<h3 style="margin-bottom: -17px;">Updated Student</h3>
+				<hr style="border: 1px solid skyblue;" />
+			</div>
+                    <form action="#" th:action="@{/update/{rollNumber}(rollNumber=${student.rollNumber})}" modelAttribute="student" method="post">
+                          
+                      <table class="table table-user-information" style="margin-left: 50px;">    
+                            
+                           <tr>
+                           
+                           		<th><label for="name" class="col-form-label">Roll Number :</label></th>
+								<td><input type="number" id="rollNumber" name="rollNumber" disabled="disabled" th:field="*{student.rollNumber}" value="{student.studentName}" placeholder="Roll Number" required="true" class="form-control col-sm-4" /></td>
+                           		
+                           
+								<th><label for="name" class="col-form-label">Name</label></th>
+	                            <td><input type="text"  th:field="*{student.studentName}" value="{student.studentName}" class="form-control" id="name" placeholder="Name"/></td> <!-- <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span> -->
+	                        
+						</tr>
+						
+						<tr>    
+                                <th><label for="name" class="col-form-label">Standard</label></th>
+                            	<td><select name="Standard" required="true" class="form-control col-sm-4">
+									<option>Standard</option>
+									
+									<option th:value="${student.Standard}"  th:text="${student.Standard}"  th:field="*{student.Standard}"></option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+							</select></td>
+                           
+                          
+                          <th><label for="name" class="col-form-label">Standard</label> </th>
+						  <td><select name="Divison" required="true"
+								class="form-control col-sm-4">
+									<option>Division</option>
+									<option th:value="${student.Divison}"  th:text="${student.Divison}"  th:field="*{student.Divison}"></option>
+									
+									<option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option>
+									<option value="A">D</option>
+									<option value="B">E</option>
+									<option value="C">F</option>
+							</select></td>
+
+						
+						</tr>  
+                        <tr>  
+                        
+							<th>Date Of Birth :</th>
+							<td><input type="date" name="DOB" required="true" value="{student.DOB}" th:field="*{student.DOB}" class="form-control col-sm-4" /></td>
+							
+							
+							<th>Gender :</th>
+							<td> <select name="Gender" required="true" class="form-control col-sm-4">
+									<option>Gender</option>
+									<option th:value="${student.Gender}"  th:text="${student.Gender}"  th:field="*{student.Gender}"></option>
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+								</select>
+							</td>
+
+						</tr>
+						<tr>
+						
+						
+							<th>City:</th>
+							<td><input type="text" name="City" placeholder="City" value="{student.City}" th:field="*{student.City}"
+								required="true" class="form-control col-sm-4" /> </td>
+						
+							<th>Pin Code :</th>
+							<td><input type="text" name="pinCode" placeholder="Pin Code" value="{student.pinCode}" th:field="*{student.pinCode}"
+								required="true" class="form-control col-sm-4" /></td>
+						
+						</tr>
+							
+						<tr>
+						
+						
+							<th>Mobile no :</th>
+							<td><input type="tel" name="Contact" pattern="[0-9]{10}" value="{student.Contact}" th:field="*{student.Contact}"
+								placeholder=" Mobile N" required="true"
+								class="form-control col-sm-4" /></td>
+							<th>Email :</th>
+							<td><input type="email" placeholder="Email" required="true" value="{student.email}" th:field="*{student.email}"
+								name="Email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+								class="form-control col-sm-4" /></td>
+
+						</tr>
+					 </table>
+					 <button type="submit" value="submit" class="btn btn-primary"
+					style="width: 15%; margin-left: 50%; font-family: times new roman; font-size: 14px; align: center;">Update
+					Student</button>
+					
+					<a th:href="@{/}"> <button type="button" class="btn btn-default btn">Cancel</button></a>
+					
+                      </form>
+                   </div>
+                </div>
+</body>
+
+</html>

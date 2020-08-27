@@ -1,6 +1,6 @@
 # Build Docker images
 mvn install or mvn package
-docker images //listing docker images  docker run -p 8091:8091 mvc-simple-docker:0.0.1-SNAPSHOT
+docker images //listing docker images </br> docker run -p 8091:8091 mvc-simple-docker:0.0.1-SNAPSHOT
 
 
 

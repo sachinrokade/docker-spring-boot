@@ -1,5 +1,9 @@
 docker login
-docker rmi $(docker images -q) -f   //remove all img
+docker build -t <img_name> Dockerfile .		// spotify is maven plugin to auto build docker image with maven command ex. [mvn install or mvn package]
+docker rmi $(docker images -q) -f   		//remove all img
+Docker-machine env default			//Docker env veriable value
+Docker-machine ip				//Docker ip
+
 
 *************push docker imgae
 docker tag ${image_id} docker.io/${login_name}/${image_name} 
@@ -32,4 +36,4 @@ docker system df
 	Images              1                   1                   144.1MB             0B (0%)
 	Containers          1                   0                   0B                  0B
 	Local Volumes       0                   0                   0B                  0B
-	Build Cache         0                   0                   0B                  0B
+	Build Cache         0                   0                   0B                  0B	

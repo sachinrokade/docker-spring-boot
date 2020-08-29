@@ -1,4 +1,3 @@
-Commands
 docker pull mysql
 docker network create demo-mysql-network
 
@@ -61,7 +60,8 @@ mysql> select * from student;
 ±------------±---------±-----------±-----------±--------±--------------------------±-------±---------±---------±-------------+
 1 row in set (0.00 sec)
 
-Trublshoot
+
+#Trublshoot
 java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
 solu= spring.datasource.url=jdbc:mysql://mysql-boot/mvcdocker?allowPublicKeyRetrieval=true&useSSL=false
 

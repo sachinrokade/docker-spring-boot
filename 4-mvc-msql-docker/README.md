@@ -1,7 +1,7 @@
 # Commands</br>
 docker pull mysql</br>
 docker network create demo-mysql-network</br>
-docker run -name mysql-boot -network demo-mysql-network -e MYSQL_ROOT_PASSWORD=boot -e MYSQL_DATABASE=mvcdocker -e MYSQL_USER=boot -e MYSQL_PASSWORD=boot mysql</br>
+docker run --name mysql-boot --network demo-mysql-network -e MYSQL_ROOT_PASSWORD=boot -e MYSQL_DATABASE=mvcdocker -e MYSQL_USER=boot -e MYSQL_PASSWORD=boot -d mysql</br>
 mvn package or mvn install [for mvc-msql-docker image]</br></br>
 
 $ docker images</br>

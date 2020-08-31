@@ -1,5 +1,5 @@
 # BootUIDemo
-Only insert oper. working 
 
-#link H2 DB
-http://localhost:8090/h2/login.jsp
+mvn package -Dskip.Tests
+docker run -p 8080:8080  sachinrokade/mvc:mvc-h2-war-docker
+docker pull sachinrokade/mvc:mvc-h2-war-docker

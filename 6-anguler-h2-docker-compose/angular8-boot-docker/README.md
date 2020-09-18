@@ -1,7 +1,8 @@
 # Angular8-Boot-Docker
 
-docker build -t angular-app -f Dockerfile.txt .
-docker run --rm -d -p 90:80/tcp angular-app:latest
+docker build -t angular-app -f Dockerfile.txt . <br>
+docker run --rm -d -p 90:80/tcp angular-app:latest <br>
+http://192.168.99.100:90/
 
 ## Development server
 

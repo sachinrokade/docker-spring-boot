@@ -1,0 +1,31 @@
+version: '3.7'
+services:  
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD : boot
+       MYSQL_DATABASE : mvcdocker
+       MYSQL_USER : boot
+       MYSQL_PASSWORD : boot
+    networks:
+      - employee-mysql
+
+  mvc-demo:
+    image: sachinrokade/mvc:mvc-msql-docker-compose
+    ports:
+      - "8012:8012"
+    networks:
+      - employee-mysql
+    depends_on:
+      - mysql
+
+networks:
+  employee-mysql: 
+
+
+
+
+

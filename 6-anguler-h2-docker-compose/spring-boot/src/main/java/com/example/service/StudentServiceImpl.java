@@ -1,13 +1,11 @@
 package com.example.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.example.controller.Employee;
 import com.example.model.Student;
 import com.example.repository.StudentRepository;
 
@@ -30,10 +28,10 @@ public class StudentServiceImpl implements StudentService {
 	@Override
 	public Student editStudent(Long id) {
 
-		Student stud = StudentRepository.
-		if (stud=null) {
-			return dao.save(stud.get());
-		}
+//		Student stud = StudentRepository.
+//		if (stud=null) {
+//			return dao.save(stud.get());
+//		}
 		return null;
 	}
 

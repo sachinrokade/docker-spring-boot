@@ -1,7 +1,7 @@
 version: '3.7'
 services:  
   angular-demo:
-    image: angular-demo:latest
+    image: sachinrokade/angular-demo:latest
     ports:
       - "4200:80"
     restart: always

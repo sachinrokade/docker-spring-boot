@@ -1,0 +1,26 @@
+version: '3.7'
+services:  
+  angular-demo:
+    image: angular-app:latest
+    ports:
+      - "4200:80"
+    restart: always
+    depends_on:
+      - mvc-demo
+    networks:
+      - mvc-angular-network
+
+  mvc-demo:
+    image: sachinrokade/mvc:anguler-h2-docker-compose
+    ports:
+      - "8091:8091"
+    networks:
+      - mvc-angular-network
+    
+networks:
+  mvc-angular-network: 
+
+
+
+
+

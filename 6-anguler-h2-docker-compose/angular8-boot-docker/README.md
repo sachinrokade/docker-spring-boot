@@ -1,6 +1,7 @@
 # Angular8-Boot-Docker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+docker build -t angular-app -f Dockerfile.txt .
+docker run --rm -d -p 90:80/tcp angular-app:latest
 
 ## Development server
 

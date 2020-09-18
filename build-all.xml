@@ -17,8 +17,10 @@
 
 		<!-- sub modules -->
 	<modules>
-		<module>/2-mvc-simple-docker</module>
+		<module>/2-mvc-simple-docker</module> 
 		<module>/3-mvc-tomcat-war-docker</module>
+		<module>/4-mvc-msql-docker</module>
+		<module>/5-mvc-msql-docker-compose</module>
     </modules>
 	
 </project>

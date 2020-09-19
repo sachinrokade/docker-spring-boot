@@ -58,11 +58,10 @@ public class StudentServiceImpl implements StudentService {
 	public Student editStudent(Long employeeId, Student employeeDetails) {
 
 		if (StudentRepository.exists(employeeId)) {
-			Student student=new Student();
-			student.setStudentName(employeeDetails.getStudentName());
-			student.setEmail(employeeDetails.getEmail());
+			employeeDetails.setStudentName(employeeDetails.getStudentName());
+			employeeDetails.setEmail(employeeDetails.getEmail());
 			
-			return StudentRepository.save(student);
+			return StudentRepository.save(employeeDetails);
 		}
 		return null;
 

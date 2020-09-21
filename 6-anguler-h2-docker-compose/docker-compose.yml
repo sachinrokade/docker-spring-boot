@@ -1,5 +1,32 @@
-version: '3.7'
-services:  
+version: '3'
+ 
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD : boot
+       MYSQL_DATABASE : mvcdocker
+       MYSQL_USER : boot
+       MYSQL_PASSWORD : boot
+    networks:
+      - mvc-mysql-network
+    volumes:
+     - mvc-angular-volume:/var/lib/mysql
+    
+      
+  mvc-demo:
+    image: sachinrokade/mvc:anguler-h2-docker-compose
+    ports:
+      - "8091:8091"
+    depends_on:
+      - mysql
+    networks:
+      - mvc-mysql-network
+      - mvc-angular-network
+       
   angular-demo:
     image: sachinrokade/angular-demo:latest
     ports:
@@ -9,18 +36,11 @@ services:
       - mvc-demo
     networks:
       - mvc-angular-network
-
-  mvc-demo:
-    image: sachinrokade/mvc:anguler-h2-docker-compose
-    ports:
-      - "8091:8091"
-    networks:
-      - mvc-angular-network
-    
+     
+ 
+volumes:
+  mvc-angular-volume:
+       
 networks:
   mvc-angular-network: 
-
-
-
-
-
+  mvc-mysql-network:

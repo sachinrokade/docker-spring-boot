@@ -1,5 +1,9 @@
-# Startup
+# Changes
+default db is H2 in application.pro <br>
+mysql docker image config in  application-docker.pro [default profile]<br>
 
+
+# Startup
 docker-compose up
 
 # Troubleshoot

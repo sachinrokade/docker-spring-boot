@@ -10,7 +10,7 @@ export class StudentService {
 
   private baseUrl = 'http://localhost:8091/api/getall';
 
- 
+
   constructor(private http: HttpClient) { }
 
 

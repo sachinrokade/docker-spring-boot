@@ -7,6 +7,8 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentUpdateComponent } from './student-update/student-update.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
     StudentUpdateComponent
   ],
   imports: [
-    
+
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,23 @@
+import { Student } from './../Student';
 import { StudentService } from './../student.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, HostListener, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Observable } from "rxjs";
 import { Router } from '@angular/router';
+import { MdbTablePaginationComponent, MdbTableDirective } from 'ng-uikit-pro-standard';
+
+
 
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css']
 })
-export class StudentListComponent implements OnInit {
+export class StudentListComponent implements OnInit{
 
   students: Observable<any>;
-  
+
+
+
   constructor(private studentService: StudentService,
     private router: Router) {}
 
@@ -19,10 +25,9 @@ export class StudentListComponent implements OnInit {
     this.reloadData();
   }
   reloadData() {
-    this.students = this.studentService.getStudentList();
-    console.log("------------------"+this.students);    
+    this.students = this.studentService.getStudentList()
   }
-  
+
   deleteStudent(rollNumber: number) {
     this.studentService.deleteStudent(rollNumber)
       .subscribe(
@@ -40,5 +45,4 @@ export class StudentListComponent implements OnInit {
   updateStudent(rollNumber: number){
     this.router.navigate(['update', rollNumber]);
   }
-
 }

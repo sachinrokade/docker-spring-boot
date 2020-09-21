@@ -1,6 +1,6 @@
 # Changes
 default db is H2 in application.pro <br>
-mysql docker image config in  application-docker.pro [default profile]<br>
+mysql docker image config in  application-docker.pro [active profile]<br>
 
 
 # Startup

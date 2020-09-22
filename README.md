@@ -2,7 +2,15 @@
 docker login</br>docker build -t <img_name> Dockerfile .		// spotify is maven plugin to auto build docker image with maven command ex. [mvn install or mvn package]</br>docker rmi $(docker images -q) -f   		//remove all img</br>Docker-machine env default			//Docker env veriable value</br>Docker-machine ip				//Docker ip</br></br></br>
 
 # Push docker imgae
-</br>docker tag ${image_id} docker.io/${login_name}/${image_name} </br>docker push docker.io/${login_name}/${image_name}</br>docker pull <repo>/<imgae></br></br></br></br>
+</br>
+docker tag local-image:tagname new-repo:tagname</br>
+docker push new-repo:tagname</br></br>
+
+
+docker tag ${image_id} docker.io/${login_name}/${image_name} </br>
+docker push docker.io/${login_name}/${image_name}</br>
+docker pull <repo>/<imgae>
+ </br></br>
 
 # Docker run</br>
 docker run -p hostport:contport  img_id/nm        						  //docker run -p 8091:8091 a80c</br>docker run -p hostport:contport -d img_id/nm    						  //docker run -p 8091:8091 -d a80c  -d=detach mode</br>docker run -p hostport:contport -m 256m --cpu-quota 5000 img_id/nm        //docker run -p hostport:contport -m $ram --cpu-quota $in% img_id/nm   5%=5000</br></br>

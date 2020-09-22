@@ -26,7 +26,7 @@ $ docker ps</br>
 
 
 </br>Sachin Rokade@DESKTOP-Sachin MINGW64 /c/Program Files/Docker Toolbox</br>$ docker exec -it d1 bash</br>root@d166926a9d84:/#  mysql -u root -p</br>Enter password:</br>Welcome to the MySQL monitor.  Commands end with ; or \g.</br>Your MySQL connection id is 25</br>Server version: 8.0.21 MySQL Community Server - GPL</br></br>Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.</br></br>Oracle is a registered trademark of Oracle Corporation and/or its</br>affiliates. Other names may be trademarks of their respective</br>owners.</br></br>Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</br></br>
-mysql> show databases;</br>+--------------------+
+mysql> show databases;</br>
 </br>
 
 | Database           |

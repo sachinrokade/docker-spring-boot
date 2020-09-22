@@ -8,3 +8,9 @@ http://192.168.99.100:90/
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+# Troubleshoot
+Error : An unhandled exception occurred: Cannot find module '@angular-devkit/build-angular/package.json' <br>
+Fix : npm install --save-dev @angular-devkit/build-angular
+
+
+

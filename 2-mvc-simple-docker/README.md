@@ -5,24 +5,24 @@ mvn package will use build docker image
 
 ```
     <plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.10</version>
-				<executions>
-					<execution>
-						<id>default</id>
-						<goals>
-							<goal>build</goal>
-							<!-- <goal>push</goal> -->
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<repository>sachinrokade/mvc</repository>
-					<!-- <contextDirectory>src/main/docker</contextDirectory> -->
-					<tag>${project.artifactId}</tag>
-				</configuration>
-	 </plugin>
+	<groupId>com.spotify</groupId>
+	<artifactId>dockerfile-maven-plugin</artifactId>
+	<version>1.4.10</version>
+	<executions>
+		<execution>
+			<id>default</id>
+			<goals>
+				<goal>build</goal>
+			   <!-- <goal>push</goal> -->
+			</goals>
+		</execution>
+	</executions>
+	<configuration>
+		<repository>sachinrokade/mvc</repository>
+		<!-- <contextDirectory>src/main/docker</contextDirectory> -->
+		<tag>${project.artifactId}</tag>
+	</configuration>
+    </plugin>
 ```
 
 # Build Docker images

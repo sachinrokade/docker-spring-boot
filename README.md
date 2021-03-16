@@ -1,7 +1,7 @@
 # Docker Commands
 docker login</br>docker build -t <img_name> Dockerfile .		// spotify is maven plugin to auto build docker image with maven command ex. [mvn install or mvn package]</br>docker rmi $(docker images -q) -f   		//remove all img</br>Docker-machine env default			//Docker env veriable value</br>Docker-machine ip				//Docker ip</br></br></br>
 
-# Push docker imgae
+# Push docker image
 </br>
 docker tag local-image:tagname new-repo:tagname</br>
 docker push new-repo:tagname</br></br>
@@ -9,7 +9,7 @@ docker push new-repo:tagname</br></br>
 
 docker tag ${image_id} docker.io/${login_name}/${image_name} </br>
 docker push docker.io/${login_name}/${image_name}</br>
-docker pull <repo>/<imgae>
+docker pull <repo>/<image>
  </br></br>
 
 # Docker run</br>

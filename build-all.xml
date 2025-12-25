@@ -10,7 +10,6 @@
 	    <version>0.0.1-SNAPSHOT</version>
 	    <name>all-docker</name>
 	    <packaging>pom</packaging>
-
 		<!-- sub modules -->
 	<modules>
 		<module>/2-mvc-simple-docker</module> 
